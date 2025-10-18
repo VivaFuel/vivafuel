@@ -1,0 +1,18 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --pink-1: #FFB6C1;
+  --pink-2: #FF7A9A;
+  --cream: #FFF7F5;
+  --dusty-rose: #ECAFC0;
+  --soft-gold: #D6A66A;
+  --text-primary: #1F2937;
+  --text-muted: #6B7280;
+}
+
+body { background: var(--cream); font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; color: var(--text-primary); }
+h1,h2,h3 { font-family: 'Playfair Display', serif; }
+a { text-decoration: none; }
