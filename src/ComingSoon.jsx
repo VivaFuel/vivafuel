@@ -1,10 +1,14 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function ComingSoon(){
   const [email, setEmail] = useState('');
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [fadeIn, setFadeIn] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => setFadeIn(true), 200); // smooth fade-in
+  }, []);
 
   async function submitForm(e){
     e.preventDefault();
@@ -27,9 +31,12 @@ export default function ComingSoon(){
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-6">
+    <div className={`min-h-screen flex items-center justify-center p-6 transition-opacity duration-1000 ${fadeIn ? 'opacity-100' : 'opacity-0'}`}>
       <div className="max-w-2xl w-full bg-white rounded-2xl shadow-[0_6px_24px_rgba(31,41,55,0.06)] p-10 text-center">
-        <img src="/logos/vivafuel-logo-256.png" alt="VivaFuel" className="mx-auto w-24 h-24 mb-6" />
+        
+        {/* LOGO */}
+        <img src="/logo.png" alt="VivaFuel Logo" className="mx-auto mb-6 w-28 sm:w-36 animate-fadeIn" />
+
         <h1 className="text-3xl md:text-4xl font-semibold mb-3">Fuel Your Glow. Coming Soon.</h1>
         <p className="text-sm md:text-base text-[#6B7280] mb-6">
           Beauty-forward supplements designed to boost energy, radiance, and confidence. Sign up for launch perks.
@@ -50,7 +57,7 @@ export default function ComingSoon(){
             <button
               type="submit"
               disabled={loading}
-              className="px-6 py-3 rounded-lg bg-gradient-to-r from-[var(--pink-1)] to-[var(--pink-2)] text-white font-semibold disabled:opacity-70"
+              className="px-6 py-3 rounded-lg bg-gradient-to-r from-[#FFB6C1] to-[#FF7A9A] text-white font-semibold disabled:opacity-70"
             >
               {loading ? 'Sending…' : 'Get Early Access'}
             </button>
@@ -60,7 +67,7 @@ export default function ComingSoon(){
         <p className="text-xs text-[#9CA3AF] mt-4">Join the waitlist — exclusive launch discount inside.</p>
 
         <div className="mt-8 text-sm text-[#6B7280] space-y-2">
-          <div>Follow us on <a href="https://www.tiktok.com/@vivafuel23?is_from_webapp=1&sender_device=pc" className="underline" target="_blank" rel="noreferrer">TikTok @vivafuel23</a></div>
+          <div>Follow us on <a href="https://www.tiktok.com/@vivafuel23" className="underline" target="_blank" rel="noreferrer">TikTok @vivafuel23</a></div>
           <div>Contact: <a href="mailto:support@vivafuel.com" className="underline">support@vivafuel.com</a></div>
         </div>
       </div>
