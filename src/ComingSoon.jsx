@@ -35,7 +35,8 @@ export default function ComingSoon(){
       <div className="max-w-2xl w-full bg-white rounded-2xl shadow-[0_6px_24px_rgba(31,41,55,0.06)] p-10 text-center">
         
         {/* LOGO */}
-        <img src="/logo.png" alt="VivaFuel Logo" className="mx-auto mb-8 w-48 sm:w-64 animate-fadeIn" />
+       <img src="/logo.png" alt="VivaFuel Logo" className="mx-auto mb-10 w-64 sm:w-80 animate-fadeIn" />
+
 
         <h1 className="text-3xl md:text-4xl font-semibold mb-3">Fuel Your Glow. Coming Soon.</h1>
         <p className="text-sm md:text-base text-[#6B7280] mb-6">
