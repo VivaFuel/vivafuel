@@ -36,8 +36,6 @@ export default function ComingSoon(){
         
         {/* LOGO */}
        <img src="/logo.png" alt="VivaFuel Logo" className="mx-auto mb-10 w-64 sm:w-80 animate-fadeIn" />
-
-
         <h1 className="text-3xl md:text-4xl font-semibold mb-3">Fuel Your Glow. Coming Soon.</h1>
         <p className="text-sm md:text-base text-[#6B7280] mb-6">
           Beauty-forward supplements designed to boost energy, radiance, and confidence. Sign up for launch perks.
