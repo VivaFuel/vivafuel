@@ -54,7 +54,7 @@ export default function ComingSoon(){
         {/* SHOP NOW BUTTON – LINKS TO SHOPIFY */}
         <div className="mb-8">
           <a
-            href="https://YOUR-SHOPIFY-STORE-URL"
+            href="https://vivafuel.myshopify.com"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-gradient-to-r from-[#FFB6C1] to-[#FF7A9A] text-white text-base md:text-lg font-semibold shadow-md hover:shadow-lg transition-shadow"
