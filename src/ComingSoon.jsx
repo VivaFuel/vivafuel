@@ -7,7 +7,7 @@ export default function ComingSoon(){
   const [fadeIn, setFadeIn] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setFadeIn(true), 200); // smooth fade-in
+    setTimeout(() => setFadeIn(true), 200);
   }, []);
 
   async function submitForm(e){
@@ -33,18 +33,53 @@ export default function ComingSoon(){
   return (
     <div className={`min-h-screen flex items-center justify-center p-6 transition-opacity duration-1000 ${fadeIn ? 'opacity-100' : 'opacity-0'}`}>
       <div className="max-w-2xl w-full bg-white rounded-2xl shadow-[0_6px_24px_rgba(31,41,55,0.06)] p-10 text-center">
-        
-        {/* LOGO */}
-       <img src="/logo.png" alt="VivaFuel Logo" className="mx-auto mb-10 w-64 sm:w-80 animate-fadeIn" />
-        <h1 className="text-3xl md:text-4xl font-semibold mb-3">Fuel Your Glow. Coming Soon.</h1>
-        <p className="text-sm md:text-base text-[#6B7280] mb-6">
-          Beauty-forward supplements designed to boost energy, radiance, and confidence. Sign up for launch perks.
+
+        {/* Logo */}
+        <img
+          src="/logo.png"
+          alt="VivaFuel Logo"
+          className="mx-auto mb-8 w-64 sm:w-80"
+        />
+
+        {/* MAIN TEXT NOW SAYS WE'RE OPEN */}
+        <h1 className="text-3xl md:text-4xl font-semibold mb-3">
+          Fuel Your Glow. We&apos;re Open.
+        </h1>
+
+        <p className="text-sm md:text-base text-[#6B7280] mb-6 max-w-xl mx-auto">
+          VivaFuel is now live. Shop beauty-forward supplements designed to boost
+          energy, radiance, and confidence — made to help you glow from within.
         </p>
 
+        {/* SHOP NOW BUTTON – LINKS TO SHOPIFY */}
+        <div className="mb-8">
+          <a
+            href="https://YOUR-SHOPIFY-STORE-URL"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-gradient-to-r from-[#FFB6C1] to-[#FF7A9A] text-white text-base md:text-lg font-semibold shadow-md hover:shadow-lg transition-shadow"
+          >
+            Shop VivaFuel Now
+          </a>
+          <p className="text-xs text-[#9CA3AF] mt-2">
+            Secure checkout powered by Shopify.
+          </p>
+        </div>
+
+        {/* KEEP EMAIL LIST FOR DISCOUNTS */}
+        <h2 className="text-sm font-semibold tracking-wide text-[#6B7280] uppercase mb-2">
+          Join the Glow List
+        </h2>
+
         {sent ? (
-          <div className="text-sm font-medium text-green-600">Thanks — you’re on the list! Check your inbox for a confirmation.</div>
+          <div className="text-sm font-medium text-green-600">
+            Thanks — you’re on the list! Check your inbox for a confirmation.
+          </div>
         ) : (
-          <form onSubmit={submitForm} className="flex flex-col sm:flex-row items-center gap-3 justify-center">
+          <form
+            onSubmit={submitForm}
+            className="flex flex-col sm:flex-row items-center gap-3 justify-center"
+          >
             <input
               required
               type="email"
@@ -56,20 +91,41 @@ export default function ComingSoon(){
             <button
               type="submit"
               disabled={loading}
-              className="px-6 py-3 rounded-lg bg-gradient-to-r from-[#FFB6C1] to-[#FF7A9A] text-white font-semibold disabled:opacity-70"
+              className="px-6 py-3 rounded-lg bg-white border border-[#FF7A9A] text-[#FF4F87] font-semibold disabled:opacity-70"
             >
-              {loading ? 'Sending…' : 'Get Early Access'}
+              {loading ? 'Sending…' : 'Get Updates & Offers'}
             </button>
           </form>
         )}
 
-        <p className="text-xs text-[#9CA3AF] mt-4">Join the waitlist — exclusive launch discount inside.</p>
+        <p className="text-xs text-[#9CA3AF] mt-4">
+          Join the waitlist for glow tips, early access, and exclusive discounts.
+        </p>
 
+        {/* FOOTER LINKS */}
         <div className="mt-8 text-sm text-[#6B7280] space-y-2">
-          <div>Follow us on <a href="https://www.tiktok.com/@vivafuel23" className="underline" target="_blank" rel="noreferrer">TikTok @vivafuel23</a></div>
-          <div>Contact: <a href="mailto:support@vivafuel.com" className="underline">support@vivafuel.com</a></div>
+          <div>
+            Follow us on{' '}
+            <a
+              href="https://www.tiktok.com/@vivafuel23"
+              className="underline"
+              target="_blank"
+              rel="noreferrer"
+            >
+              TikTok @vivafuel23
+            </a>
+          </div>
+          <div>
+            Contact:{' '}
+            <a
+              href="mailto:support@vivafuel.com"
+              className="underline"
+            >
+              support@vivafuel.com
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
